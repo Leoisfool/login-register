@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>用户注册</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="main">
+        <h1>OTSPIDER</h1>
+        <!-- 选择手机号登录或者邮箱登录 -->
+        <div class="mainContent">
+            <header class="choseHeader">
+                <nav>
+                    <a onclick="change(this)">手机号注册</a>
+                    <a onclick="change(this)">邮箱注册</a>
+                </nav>
+            </header>
+            <!-- 登录界面 -->
+            <section class="contentPart">
+                <!-- 手机号登录 -->
+                <div class="part">
+                    <!-- 用户名 -->
+                    <div>
+                        <label for="username">用户名</label>
+                        <input type="text" name="username" id="username" autofocus="autofocus" placeholder="请输入用户名">
+                        <p id="userNameError">用户名输入错误</p>
+                    </div>
+                    <!-- 手机号 -->
+                    <div>
+                        <label for="phoneNumber">手机号</label>
+                        <input type="text" name="phoneNumber" id="phoneNumber" placeholder="请输入手机号">
+                        <p id="phoneError">手机号错误</p>
+                    </div>
+
+                    <!-- 密码 -->
+                    <div>
+                        <label for="password">密码</label>
+                        <input type="password" name="password" id="password" placeholder="请输入密码">
+                        <p id="passwordError">密码错误</p>
+                    </div>
+
+                    <!-- 再次输入密码 -->
+                    <div>
+                        <label for="password">再次输入密码</label>
+                        <input type="rePassword" name="rePassword" id="rePassword" placeholder="请再次输入密码">
+                        <p id="rePasswordError">密码错误</p>
+                    </div>
+                    <!-- 验证码 -->
+                    <div>验证码区</div>
+                    <!-- 登录 -->
+                    <div>
+                        <button class="submit" onclick="register()">注册</button>
+                    </div>
+                    <!-- 跳转到注册页面 -->
+                    <div>
+                        <a class="footButton">转去登录</a>
+                    </div>
+                </div>
+
+                <!-- 邮箱登录 -->
+                <div class="part" style="display:none;">
+                    <!-- 用户名 -->
+                    <div>
+                        <label for="username">用户名</label>
+                        <input type="text" name="username" id="username" autofocus="autofocus" placeholder="请输入用户名">
+                        <p id="userNameError">用户名输入错误</p>
+                    </div>
+
+                    <!-- 邮箱 -->
+                    <div>
+                        <label for="email">邮箱</label>
+                        <input type="email" name="email" id="email" autofocus="autofocus" placeholder="请输入邮箱地址">
+                        <p id="emailError">邮箱错误</p>
+                    </div>
+
+                    <!-- 密码 -->
+                    <div>
+                        <label for="password">密码</label>
+                        <input type="password" name="password" id="password" placeholder="请输入密码">
+                        <p id="passwordError">密码错误</p>
+                    </div>
+
+                    <!-- 再次输入密码 -->
+                    <div>
+                        <label for="password">再次输入密码</label>
+                        <input type="rePassword" name="rePassword" id="rePassword" placeholder="请再次输入密码">
+                        <p id="rePasswordError">密码错误</p>
+                    </div>
+                    <!-- 验证码 -->
+                    <div>验证码区</div>
+                    <!-- 登录 -->
+                    <div>
+                        <button class="submit" onclick="register()">注册</button>
+                    </div>
+                    <!-- 跳转到注册页面 -->
+                    <div>
+                        <a class="footButton">转去登录</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        function change(value) {
+            var tags = document.getElementsByClassName("choseHeader")[0].getElementsByTagName("nav")[0].getElementsByTagName("a");
+            var content = document.getElementsByTagName("section")[0].getElementsByClassName("part");
+            // alert(content[1].innerHTML);
+
+            for (var i = 0; i < tags.length; i++) {
+                if (tags[i] === value) {
+                    tags[i].style.backgroundColor = "#2B2b2b";
+                    tags[i].style.borderBottom = "3px solid #6CA6CD";
+                    content[i].style.display = "block";
+                } else {
+                    tags[i].style.backgroundColor = "#454545";
+                    tags[i].style.borderBottom = "3px #636363 solid";
+                    content[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

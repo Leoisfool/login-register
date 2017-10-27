@@ -1,0 +1,138 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+body{
+    /* 布局 */
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    /* 样式 */
+    background-color: #eee;
+}
+.main{
+    /* 布局 */
+    width: 800px;
+    padding: 20px;
+    margin-top: 100px;
+    justify-content: center;
+    align-items: center;
+    /* 样式 */
+}
+
+/* 标题 */
+h1{
+    text-align: center;
+    font-size: 40px;
+}
+
+/* 登录部分 */
+/* 包含所有关于登录的样式 */
+.mainContent{
+    /* text-align: center; */
+    padding: 0px 10px 10px 10px;
+    margin: 20px;
+    /* 样式 */
+}
+
+/* 登录选择样式 头部 */
+.choseHeader nav{
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: space-between;
+    /* nav的边框 */
+    border-top: 1px #636363 solid;
+    border-left: 1px #636363 solid;
+}
+.choseHeader nav a:hover{
+    background-color: #2B2b2b;
+    border-bottom: 3px solid #6CA6CD;
+}
+.choseHeader nav a{
+    width:50%;
+    background-color: #454545;
+    border-right: 1px #636363 solid;
+    border-bottom: 3px #636363 solid;
+    padding-top: 10px;
+    padding-bottom:5px;
+    color: white;
+    text-decoration: none;
+}
+
+/* 登录主体部分 */
+
+/* 包含part1和part2 */
+.contentPart{
+    /* 布局 */
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    justify-content: center;
+    /* 样式 */
+    background-color: white;
+    padding: 20px;
+}
+
+/* part样式 */
+.contentPart .part{
+    display: flex;
+    justify-content: center;
+    width: 700px;
+    flex-direction: column;
+    margin:0 auto;
+}
+/* lable+input+p */
+.contentPart .part div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0px 10px 10px 70px;
+    line-height: 1.5em;
+}
+/* 隐藏警告 */
+.contentPart .part div p{
+    visibility: hidden;
+}
+/* 输入框样式 */
+.contentPart .part div input{
+    width: 80%;
+    height: 25px;
+    border: 2px solid #eee;
+    border-radius: 3px;
+    padding: 5px 0px;
+}
+/* lable样式 */
+.contentPart .part label{
+    display: block;
+}
+
+/* 注册或登录按钮的样式 */
+.submit{
+    width: 80%;
+    padding: 5px 0px;
+    background-color: #6CA6CD;
+    border:none;
+    border-radius: 5px;
+    color: white;
+    font-size: 20px;
+}
+.submit:hover{
+    background-color: #6CA6DD;
+}
+/* 转到注册界面 */
+.footButton{
+    color: #6CA6CD;
+    text-decoration: underline;
+    padding-left: 420px;
+}
+/* .footButton{
+    width: 750px;
+    margin: 30px;
+} */
+
+/* 功能模块（tab选择） */
+.show{
+    display: block;
+}

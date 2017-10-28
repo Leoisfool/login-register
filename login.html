@@ -6,8 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>用户登录</title>
-    <link href="./slide-unlock.css" rel="stylesheet">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="css/htmleaf-demo.css">
+    <link rel="stylesheet" type="text/css" href="css/unlock.css">
+    <style>
+        body {
+            background-color: #eee;
+            color: black;
+        }
+    </style>
 </head>
 
 <body>
@@ -26,55 +34,30 @@
                 <!-- 手机号登录 -->
                 <div class="part">
                     <!-- 手机号 -->
-                    <div>
+                    <div class="tabTarget">
                         <label for="phoneNumber">手机号</label>
-                        <input type="text" name="phoneNumber" id="phoneNumber" autofocus="autofocus" placeholder="请输入手机号">
-                        <p id="phoneError">手机号错误</p>
+                        <input onblur="tel()" type="text" name="phoneNumber" id="phoneNumber" placeholder="请输入手机号">
+                        <p id="phoneError"></p>
                     </div>
 
-                    <!-- 密码 -->
-                    <div>
-                        <label for="password">密码</label>
-                        <input type="password" name="password" id="password" placeholder="请输入密码">
-                        <p id="passwordError">密码错误</p>
-                    </div>
-
-                    <!-- 验证码 -->
-                    <div>
-                        <div id="slider">
-                            <div id="slider_bg"></div>
-                            <span id="label">>></span>
-                            <span id="labelTip">拖动滑块验证</span>
-                        </div>
-                    </div>
-                    <!-- 登录 -->
-                    <div>
-                        <button class="submit" onclick="login()">登录</button>
-                    </div>
-                    <!-- 跳转到注册页面 -->
-                    <div>
-                        <a class="footButton">转去注册</a>
-                    </div>
-                </div>
-
-                <!-- 邮箱登录 -->
-                <div class="part" style="display:none;">
                     <!-- 邮箱 -->
-                    <div>
+                    <div class="tabTarget" style="display:none;">
                         <label for="email">邮箱</label>
-                        <input type="email" name="email" id="email" autofocus="autofocus" placeholder="请输入邮箱地址">
+                        <input onblur="email()" type="email" name="email" id="email" placeholder="请输入邮箱地址">
                         <p id="emailError">邮箱错误</p>
                     </div>
 
                     <!-- 密码 -->
                     <div>
                         <label for="password">密码</label>
-                        <input type="password" name="password" id="password" placeholder="请输入密码">
+                        <input onblur="password(this)" type="password" name="password" placeholder="请输入密码">
                         <p id="passwordError">密码错误</p>
                     </div>
 
                     <!-- 验证码 -->
-                    <div>验证码区</div>
+                    <div>
+                        <div class="bar1 bar"></div>
+                    </div>
                     <!-- 登录 -->
                     <div>
                         <button class="submit" onclick="login()">登录</button>
@@ -87,39 +70,10 @@
             </section>
         </div>
     </div>
-    <script src="jquery-1.12.1.min.js"></script>
-    <script src="jquery.slideunlock.js"></script>
-    <script>
-        $(function() {
-            var slider = new SliderUnlock("#slider", {
-                successLabelTip: "验证成功"
-            }, function() {
-                alert("验证成功,即将跳转至百度");
-                //          	window.location.href="http://www.baidu.com"
-            });
-            slider.init();
-        })
-    </script>
-
-    <script>
-        function change(value) {
-            var tags = document.getElementsByClassName("choseHeader")[0].getElementsByTagName("nav")[0].getElementsByTagName("a");
-            var content = document.getElementsByTagName("section")[0].getElementsByClassName("part");
-            // alert(content[1].innerHTML);
-
-            for (var i = 0; i < tags.length; i++) {
-                if (tags[i] === value) {
-                    tags[i].style.backgroundColor = "#2B2b2b";
-                    tags[i].style.borderBottom = "3px solid #6CA6CD";
-                    content[i].style.display = "block";
-                } else {
-                    tags[i].style.backgroundColor = "#454545";
-                    tags[i].style.borderBottom = "3px #636363 solid";
-                    content[i].style.display = "none";
-                }
-            }
-        }
-    </script>
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <!-- 解锁 -->
+    <script src='js/unlock.js'></script>
+    <script src="js/index.js"></script>
 </body>
 
 </html>

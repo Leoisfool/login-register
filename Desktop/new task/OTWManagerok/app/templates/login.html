@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>用户登录</title>
+
+    <link rel="stylesheet" type="text/css" href="../static/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="../static/css/htmleaf-demo.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/unlock.css">
+    <link rel="stylesheet" href="../static/css/login.css">
+    <style>
+        body {
+            background-color: #eee;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <video autoplay loop data-height="1080" data-width="1920" style="display:block;height:1080px;width:1920px;z-index:-1;position:absolute;top:0;left:0;">
+        <source src="../static/imgs/cloud.mp4" type="video/mp4 "></source>
+        你的浏览器暂时不支持Video播放，请更换最新浏览器！
+    </video>
+    <div class="main">
+        <h1>OTWSpider</h1>
+        <!-- 登录界面 -->
+        <section class="contentPart">
+            <div class="form-header">
+                <h3>账号登录</h3>
+                <a href="/registerIndex">立即注册</a>
+            </div>
+            <!-- 账号 -->
+            <div class="form-group user" onclick="addBorderStyle(this)">
+                <input onblur="user(this)" type="text" name="user" id="user" placeholder="请输入用户名/邮箱/手机号">
+            </div>
+            <div class="warning">
+                <p id="userError">&nbsp;</p>
+            </div>
+
+            <!-- 密码 -->
+            <div class="form-group passImg" onclick="addBorderStyle(this)">
+                <input onblur="password(this)" type="password" name="password" id="password" placeholder="请输入密码">
+            </div>
+            <div class="warning">
+                <p id="passwordError">&nbsp;</p>
+            </div>
+
+            <!-- 验证码 -->
+            <div class="confirm">
+                <div class="bar1 bar"></div>
+            </div>
+            <!-- 登录 -->
+            <div>
+                <button class="submit disabled" onclick="login()">登录</button>
+            </div>
+    </div>
+    </section>
+    </div>
+    <script src="../static/js/jquery-1.11.0.min.js"></script>
+    <!-- 解锁 -->
+    <script src='../static/js/unlock.js'></script>
+    <script src="../static/js/login.js"></script>
+</body>
+
+</html>
